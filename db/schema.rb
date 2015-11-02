@@ -20,8 +20,17 @@ ActiveRecord::Schema.define(version: 20151026111621) do
     t.string   "title"
     t.text     "body"
     t.string   "tags"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end
