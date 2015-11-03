@@ -59,7 +59,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :body, :image, :tags)
+    params.require(:post).permit(:title, :body, :image, :tags, :user_id)
   end
 
   def check_ownership
