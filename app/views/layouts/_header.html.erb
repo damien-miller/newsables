@@ -1,0 +1,56 @@
+<header class="un-header-wide un-shadow">
+  <div class="un-menu-device">
+  	<div class="un-container">
+          <div class="un-logo-left un-logo-device un-pull-left">
+              <a href="<%= root_path %>"><div><%= current_user ? current_user.name : "newsables"  %></div></a>
+          </div>
+          <div class="un-btn-switch un-pull-right">
+              <i class="un-icon-menu"></i>
+          </div>
+      </div>
+  </div>
+  <div class="un-menu-wide">
+  	<nav class="un-menu-left un-pull-left">
+      <ul class="un-main-menu">
+        <li class="un-item-parent"><a href="<%= posts_path %>">posts<i class="un-icon-keyboard-arrow-down"></i></a></li>
+      	<li class="un-item-parent"><a href="<%= root_path %>">xxx<i class="un-icon-keyboard-arrow-down"></i></a></li>
+      </ul>
+    </nav>
+    <div class="un-logo-center">
+    	<span class="un-logo-sticky"><a href="<%= root_path %>"><div><%= current_user ? current_user.name : "newsables" %></div></a></span>
+    </div>
+    <nav class="un-menu-right un-menu-wide un-pull-right">
+      <ul class="un-main-menu">          	
+        <% if current_user %>
+          <li class="un-item-parent">
+          <%= link_to user_path(current_user) do %>
+             admin<i class="un-icon-keyboard-arrow-down"></i> 
+          <% end %>
+          </li>
+          <li class="un-item-parent">
+          <%= link_to logout_path, method: :delete do %>
+             Log out<i class="un-icon-keyboard-arrow-down"></i> 
+          <% end %>
+          </li>
+        <% else %>
+          <li class="un-item-parent">
+          <%= link_to "Sign In", new_session_path %>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
+    <div class="un-clearfix"></div>  
+  </div>
+
+  <div class="un-share-center">
+  	<ul class="un-list-share-top un-list-share">
+          <li id="un-btn-search"><a href=""><i class="un-icon-search"></i></a></li>
+          <li><a target="_blank" href="https://twitter.com"><i class="un-icon-social-twitter"></i></a></li>
+          <li><a target="_blank" href="https://facebook.com"><i class="un-icon-facebook"></i></a></li>
+          <li><a target="_blank" href="http://www.google.com/"><i class="un-icon-google-plus"></i></a></li>
+          <li><a target="_blank" href="https://instagram.com/"><i class="un-icon-instagram"></i></a></li>
+          <li><a target="_blank" href="https://it.pinterest.com/"><i class="un-icon-pinterest"></i></a></li>
+      </ul>  
+  </div>
+  <%= render 'layouts/messages' %>
+</header>

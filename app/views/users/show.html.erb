@@ -1,0 +1,11 @@
+<%= render 'layouts/header' %>
+<div class="un-page-home un-home-vertical un-social-full">
+  <div class="un-home-sidebar">
+    <h2><%= @user.try(:name) %></h2>
+    <%= link_to 'View Posts', posts_path %> |
+    <%= link_to 'Add Post', new_post_path %>
+  	<div class="un-clearfix"></div>
+  </div>
+</div>
+
+

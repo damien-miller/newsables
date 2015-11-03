@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show]
+  before_action :check_ownership, only: [:show]
 
   def new
     @user = User.new    
+  end
+
+  def show
   end
 
   def create
@@ -20,4 +25,12 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password)
   end 
+
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  def check_ownership
+    redirect_to root_path unless @user == current_user
+  end
 end

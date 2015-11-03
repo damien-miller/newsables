@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :posts
-  root 'pages#index'
+  root 'pages#front'
 
   resources :users
   resources :sessions
