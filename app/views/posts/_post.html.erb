@@ -1,0 +1,24 @@
+<div class="un-col-md-4 un-col-grid">
+  <div class="un-item-post un-item-grid">
+  <div class="un-post-media un-post-image">
+  <img src="<%= post.image %>" alt="">
+  <div class="un-item-overlay-1"></div>
+  <div class="un-item-more-icon"><i class="un-icon-read-more"></i><div></div></div></div><!-- end post top / slider -->
+    <div class="un-post-caption un-shadow">
+    <div class="un-post-head">
+    <div class="un-post-hash"><a href="#"><span><%= post.tags %></span></a></div>
+    <div class="un-post-title"><a href="<%= post_path(post) %>"><%= post.title %></a></div>
+    </div>
+    <div class="un-post-exc"><%= post.body %></div>
+    <div class="un-post-info">
+    <div class="un-post-meta un-pull-left">
+    <span class="un-post-date"><%= post.created_at.strftime("%d-%m-%Y") %> by <%= post.author.name %></span>
+    </div>
+    <div class="un-post-stats un-pull-right">
+    <span class="un-post-views"><i class="un-icon-eye"></i>575</span>
+    </div>
+    <div class="un-clearfix"></div>
+    </div><!-- end post meta / stats -->
+    </div><!-- end post caption -->
+  </div><!-- end item post image -->
+</div>

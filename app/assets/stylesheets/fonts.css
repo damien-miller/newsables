@@ -1,0 +1,188 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:400,900,700,300|Roboto+Slab&subset=cyrillic);
+
+@font-face {
+	font-family: 'un-icons';
+	src:url('/assets/fonts/un-icons.eot?ruapy8');
+	src:url('/assets/fonts/un-icons.eot?#iefixruapy8') format('embedded-opentype'),
+		url('/assets/fonts/un-icons.woff?ruapy8') format('woff'),
+		url('/assets/fonts/un-icons.ttf?ruapy8') format('truetype'),
+		url('/assets/fonts/un-icons.svg?ruapy8#un-icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="un-icon-"], [class*=" un-icon-"] {
+	font-family: 'un-icons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.un-icon-comment-alt2-stroke:before {
+	content: "\e602";
+}
+
+.un-icon-link:before { 
+	content: "\e603";
+}
+
+.un-icon-headphones:before {
+	content: "\e604";
+}
+
+.un-icon-play:before {
+	content: "\e605";
+}
+
+.un-icon-play-alt:before {
+	content: "\e606";
+}
+
+.un-icon-left-quote:before {
+	content: "\e607";
+}
+
+.un-icon-right-quote:before {
+	content: "\e608";
+}
+
+.un-icon-read-more:before {
+	content: "\e609";
+}
+
+.un-icon-eye:before {
+	content: "\e60a";
+}
+
+.un-icon-user:before {
+	content: "\e60b";
+}
+
+.un-icon-feather:before {
+	content: "\e60c";
+}
+
+.un-icon-instagram:before {
+	content: "\e60d";
+}
+
+.un-icon-googleplus:before {
+	content: "\e60e";
+}
+
+.un-icon-rss:before {
+	content: "\f034";
+}
+
+.un-icon-feed:before {
+	content: "\e91d";
+}
+
+.un-icon-stats-bars:before {
+	content: "\e99c";
+}
+
+.un-icon-social-twitter:before {
+	content: "\e611";
+}
+
+.un-icon-loader:before {
+	content: "\e105";
+}
+
+.un-icon-search:before {
+	content: "\e660";
+}
+
+.un-icon-keyboard-arrow-down:before {
+	content: "\e7c1";
+}
+
+.un-icon-keyboard-arrow-left:before {
+	content: "\e7c2";
+}
+
+.un-icon-keyboard-arrow-right:before {
+	content: "\e7c3";
+}
+
+.un-icon-keyboard-arrow-up:before {
+	content: "\e7c4";
+}
+
+.un-icon-close:before {
+	content: "\e8a9";
+}
+
+.un-icon-menu:before {
+	content: "\e8ae";
+}
+
+.un-icon-share:before {
+	content: "\e8ec";
+}
+
+.un-icon-clock-o:before {
+	content: "\f017";
+}
+
+.un-icon-play-circle-o:before {
+	content: "\f01d";
+}
+
+.un-icon-facebook:before {
+	content: "\f09a";
+}
+
+.un-icon-google-plus:before {
+	content: "\f0d5";
+}
+
+.un-icon-angle-double-left:before {
+	content: "\f100";
+}
+
+.un-icon-angle-double-right:before {
+	content: "\f101";
+}
+
+.un-icon-chevron-thin-up:before {
+	content: "\e601";
+}
+
+.un-icon-pinterest:before {
+	content: "\e60f";
+}
+
+.un-icon-chart:before {
+	content: "\e600";
+}
+
+.un-icon-play2:before {
+	content: "\e610";
+}
+
+.un-icon-pause:before { 
+	content: "\e6b8";
+}
+
+.active-nav-link {
+    line-height: 38px;
+    padding: 0 18px;
+    position: relative;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    /*background-color: #78c1cf;
+    color: #fff;*/
+}
