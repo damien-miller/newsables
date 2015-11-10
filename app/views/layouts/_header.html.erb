@@ -12,8 +12,9 @@
   <div class="un-menu-wide">
   	<nav class="un-menu-left un-pull-left">
       <ul class="un-main-menu">
-        <li class="un-item-parent"><a href="<%= posts_path %>">posts<i class="un-icon-keyboard-arrow-down"></i></a></li>
-      	<li class="un-item-parent"><a href="<%= root_path %>">xxx<i class="un-icon-keyboard-arrow-down"></i></a></li>
+        <li class="un-item-parent"><a href="<%= posts_path %>">events<i class="un-icon-keyboard-arrow-down"></i></a></li>
+        <li class="un-item-parent"><a href="<%= posts_path %>">venues<i class="un-icon-keyboard-arrow-down"></i></a></li>
+      	<li class="un-item-parent"><a href="<%= root_path %>">search<i class="un-icon-keyboard-arrow-down"></i></a></li>
       </ul>
     </nav>
     <div class="un-logo-center">
@@ -24,12 +25,12 @@
         <% if current_user %>
           <li class="un-item-parent">
           <%= link_to user_path(current_user) do %>
-             admin<i class="un-icon-keyboard-arrow-down"></i> 
+             <%= current_user.name %><i class="un-icon-keyboard-arrow-down"></i> 
           <% end %>
           </li>
           <li class="un-item-parent">
           <%= link_to logout_path, method: :delete do %>
-             Log out<i class="un-icon-keyboard-arrow-down"></i> 
+             Log out<i class="un-icon-power-off"></i> 
           <% end %>
           </li>
         <% else %>
@@ -44,7 +45,11 @@
 
   <div class="un-share-center">
   	<ul class="un-list-share-top un-list-share">
-          <li id="un-btn-search"><a href=""><i class="un-icon-search"></i></a></li>
+          <li id="up-btn-search">
+          <%= link_to search_posts_path, remote: true do %>
+            <i class="un-icon-search"></i>
+          <% end %>
+          </li>
           <li><a target="_blank" href="https://twitter.com"><i class="un-icon-social-twitter"></i></a></li>
           <li><a target="_blank" href="https://facebook.com"><i class="un-icon-facebook"></i></a></li>
           <li><a target="_blank" href="http://www.google.com/"><i class="un-icon-google-plus"></i></a></li>
@@ -52,5 +57,5 @@
           <li><a target="_blank" href="https://it.pinterest.com/"><i class="un-icon-pinterest"></i></a></li>
       </ul>  
   </div>
-  <%= render 'layouts/messages' %>
+  <% render 'layouts/messages' %>
 </header>

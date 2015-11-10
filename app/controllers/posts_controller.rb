@@ -4,7 +4,8 @@ class PostsController < ApplicationController
   before_action :check_ownership, only: [:edit]
 
   def index
-    @posts = Post.all
+    @q = Post.ransack(params[:q])
+    @posts = @q.result(distinct: true)
   end
 
   def show
@@ -50,6 +51,9 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def render_search_popup
   end
 
   private

@@ -1011,30 +1011,30 @@ INKAS.modals = function(){
 	});
 	
 	// SEARCH
-	$('.un-list-share-top li#un-btn-search a, .un-btn-search').on( 'click', function(e){
+	//$('.un-list-share-top li#un-btn-search a, .un-btn-search').on( 'click', function(e){
 		
-		e.preventDefault();
+	//	e.preventDefault();
 		
-		$('body').append('<div id="un-search-modal" class="un-search-modal"><div class="un-search-close"><i class="un-icon-close"></i></div><form id="un-search-form" class="un-search-form" action="" method="get"><input type="textbox" placeholder="Search..." value="" id="un-search-field" class="un-search-field"><div class="un-search-row"></div></form></div>');
+	//	$('body').append('<div id="un-search-modal" class="un-search-modal"><div class="un-search-close"><i class="un-icon-close"></i></div><form id="un-search-form" class="un-search-form" action="" method="get"><input type="textbox" placeholder="Search..." value="" id="un-search-field" class="un-search-field"><div class="un-search-row"></div></form></div>');
 		
-		TweenMax.set( $('body'), { overflow: "hidden" } );		
+	//	TweenMax.set( $('body'), { overflow: "hidden" } );		
 		
-		TweenMax.to( $('#un-search-modal'), 0.5, { left: "0",  ease:Power2.easeOut } );
-		TweenMax.to( $('.un-search-row'), 0.5, { width: "100%",  ease:Power2.easeOut, delay:0.5 } );
+	//	TweenMax.to( $('#un-search-modal'), 0.1, { left: "0",  ease:Power2.easeOut } );
+	//	TweenMax.to( $('.un-search-row'), 0.1, { width: "100%",  ease:Power2.easeOut, delay:0.1 } );
 		
 		
-		$('.un-search-close').on( 'click', function(){
-			TweenMax.set( $('body'), { overflow: "" } );
-			TweenMax.to( $('.un-search-row'), 0.5, { width: "0",  ease:Power2.easeOut } );
-			TweenMax.to( $('#un-search-modal'), 0.5, { left: "100%",  ease:Power2.easeOut, delay:0.5 } );	
+	//	$('.un-search-close').on( 'click', function(){
+	//		TweenMax.set( $('body'), { overflow: "" } );
+	//		TweenMax.to( $('.un-search-row'), 0.1, { width: "0",  ease:Power2.easeOut } );
+	//		TweenMax.to( $('#un-search-modal'), 0.1, { left: "100%",  ease:Power2.easeOut, delay:0.1 } );	
 			
-			setTimeout(function(){
-				$('#un-search-modal').remove();
-			}, 1500);
+	//		setTimeout(function(){
+	//			$('#un-search-modal').remove();
+	//		}, 1500);
 				
-		});
+	//	});
 		 
-	});
+	//});
 	
 	/* IMAGE MODAL */
 	

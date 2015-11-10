@@ -10,6 +10,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'bcrypt', '~> 3.1.7'
+# search
+gem 'ransack', github: 'activerecord-hackery/ransack'
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.0'

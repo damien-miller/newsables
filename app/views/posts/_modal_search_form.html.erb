@@ -1,0 +1,6 @@
+<div id="un-search-modal" class="un-search-modal">
+	<div class="un-search-close"><i class="un-icon-close"></i></div>
+	<%= search_form_for query, id: "un-search-form", class: "un-search-form" do |f| %>
+	  <%= f.search_field :title_or_body_cont, id: "un-search-field", class: "un-search-field", placeholder: "type here" %>
+	<% end %>
+</div>

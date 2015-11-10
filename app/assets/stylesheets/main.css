@@ -418,6 +418,7 @@ input:focus, select:focus, textarea: focus {
 	line-height: 60px;
 }
 
+
 .un-search-modal {
 	position: fixed;
 	left: 100%;
@@ -835,8 +836,8 @@ input:focus, select:focus, textarea: focus {
 }
 
 .un-logo-sticky {
-	display: inline-block;
-	padding-right: 15px;
+	display: inline-block;/*
+	padding-right: 15px;*/
   height: 90px;
   line-height: 90px;
 }	
