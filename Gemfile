@@ -13,9 +13,7 @@ gem 'bcrypt', '~> 3.1.7'
 # search
 gem 'ransack', github: 'activerecord-hackery/ransack'
 # api
-gem 'rails-api'
 gem "active_model_serializers", github: "rails-api/active_model_serializers"
-#gem 'active_model_serializers', '0.9.3'
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.0'
