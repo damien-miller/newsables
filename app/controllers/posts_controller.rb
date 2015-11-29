@@ -21,6 +21,8 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.author = current_user
+    tags = params[:tags]
+    @post.tag_list.add(tags, parse: true)
 
     respond_to do |format|
       if @post.save
@@ -34,6 +36,9 @@ class PostsController < ApplicationController
   end
 
   def update
+    tags = params[:tags]
+    @post.tag_list.add(tags, parse: true)
+    
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
@@ -63,7 +68,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :body, :image, :tags, :user_id)
+    params.require(:post).permit(:title, :body, :image, :tag_list, :user_id)
   end
 
   def check_ownership

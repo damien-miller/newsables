@@ -12,9 +12,7 @@
   <div class="un-menu-wide">
   	<nav class="un-menu-left un-pull-left">
       <ul class="un-main-menu">
-        <li class="un-item-parent"><a href="<%= posts_path %>">events<i class="un-icon-keyboard-arrow-down"></i></a></li>
-        <li class="un-item-parent"><a href="<%= posts_path %>">venues<i class="un-icon-keyboard-arrow-down"></i></a></li>
-      	<li class="un-item-parent"><a href="<%= root_path %>">search<i class="un-icon-keyboard-arrow-down"></i></a></li>
+      	<li class="un-item-parent"><a href="<%= new_post_path %>">add post<i class="un-icon-keyboard-arrow-right"></i></a></li>
       </ul>
     </nav>
     <div class="un-logo-center">
@@ -25,12 +23,12 @@
         <% if current_user %>
           <li class="un-item-parent">
           <%= link_to user_path(current_user) do %>
-             <%= current_user.name %><i class="un-icon-keyboard-arrow-down"></i> 
+            admin<i class="un-icon-keyboard-arrow-right"></i> 
           <% end %>
           </li>
           <li class="un-item-parent">
           <%= link_to logout_path, method: :delete do %>
-             Log out<i class="un-icon-power-off"></i> 
+             Log out<i class="fa fa-power-off" style="font-size: 13px;line-height: 14px;"></i> 
           <% end %>
           </li>
         <% else %>

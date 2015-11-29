@@ -14,6 +14,14 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'ransack', github: 'activerecord-hackery/ransack'
 # api
 gem "active_model_serializers", github: "rails-api/active_model_serializers"
+# var
+gem 'responders'
+# tagging
+gem 'acts-as-taggable-on', '~> 3.4'
+# Likes
+gem 'acts_as_votable', '~> 0.10.0'
+# ancestry
+gem 'ancestry'
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.0'

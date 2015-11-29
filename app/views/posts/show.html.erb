@@ -1,25 +1,53 @@
-<div class="un-page-home un-home-vertical un-social-full">
-  <div class="un-home-sidebar">
-    <h2><%= @user.try(:name) %></h2>
-	<p id="notice"><%= notice %></p>
+<div class="un-page-standard un-page-sidebar">
+  <div class="un-container">
+    <div class="un-col-md-8 un-content">
+  		<div class="un-item-post un-item-medium">
 
-	<p>
-	  <strong>Title:</strong>
-	  <%= @post.title %>
-	</p>
 
-	<p>
-	  <strong>Body:</strong>
-	  <%= @post.body %>
-	</p>
+  			<div class="un-post-media un-post-image un-overlay-4">
+  			  <%= image_tag(@post.image) %>
+        </div><!-- end page top / page media -->
 
-	<p>
-	  <strong>Tags:</strong>
-	  <%= @post.tags %>
-	</p>
+  			<div class="un-post-caption un-shadow">
 
-	<%= link_to 'Edit', edit_post_path(@post) %> |
-	<%= link_to 'Back', posts_path %>
-  	<div class="un-clearfix"></div>
+  				<div class="un-share-mask"></div>
+  				
+  			    <ul class="un-list-share un-list-share-side">
+  			    	<li><a href="#"><i class="un-icon-social-twitter"></i></a></li>
+  			        <li><a href="#"><i class="un-icon-facebook"></i></a></li>
+  			        <li><a href="#"><i class="un-icon-google-plus"></i></a></li>
+  			        <li><a href="#"><i class="un-icon-pinterest"></i></a></li>
+  			    </ul>
+
+  				  <div class="un-post-head">
+              <div class="un-post-hash">
+                <% @post.tag_list.each do |tag| %>
+                <span style="text-transform: lowercase;">#<%= tag %></span>
+                <% end %>
+              </div>
+              <div class="un-post-title"><%= @post.title %></div>
+              <div class="un-divider-center"></div>
+  			    </div>
+  			    
+  			    <div class="un-post-content">
+              <%= @post.body.html_safe %>
+            </div>
+  			                        
+  			    <div class="un-post-info">
+  			        <div class="un-post-stats un-pull-right">
+                  <% if @post.author == current_user %>
+  			        	<span class="un-post-views"><i class="fa fa-cogs"></i><%= link_to "edit", edit_post_path(@post) %></span>
+                  <% end %>
+                  <span class="un-post-views"><i class="un-icon-eye"></i>575</span>
+  			        </div>
+  			        <div class="un-clearfix"></div>
+  			    </div><!-- end page meta / stats -->
+  			            
+  			</div><!-- end page content -->
+
+
+
+  		</div>
+    </div>
   </div>
 </div>
