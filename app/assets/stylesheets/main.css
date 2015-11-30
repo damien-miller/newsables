@@ -219,7 +219,7 @@ blockquote a {
 }
 
 /* INPUT */
-/*
+
 select, input, textarea, button {
     outline: none;
     appearance: none;
@@ -268,7 +268,7 @@ input:focus, select:focus, textarea: focus {
 	outline: none;
 	border: none;
 }
-*/
+
 /* 2. HEADERS */
 
 .un-header-narrow {

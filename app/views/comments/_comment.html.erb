@@ -1,0 +1,16 @@
+<li class="un-comment-row">
+    <div class="un-comment-avatar"><!--
+        <img src="img/media/avatars/img1.jpg" alt="">-->
+    </div>
+                    
+    <div class="un-comment-cloud">
+        <div class="un-comment-arrow"></div>
+        <div class="un-btn-reply">
+            <a href="#"><i class="un-icon-share"></i></a>
+        </div>
+        <div class="un-comment-author"><%= link_to comment.author.name, comment.author %></div>
+        <div class="un-comment-date"><%= comment.created_at %></div>
+        
+        <div class="un-comment"><%= comment.body %></div>
+    </div>
+</li><!-- end first comment -->

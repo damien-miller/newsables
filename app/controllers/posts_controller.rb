@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @comments = @post.comments.order("created_at DESC")
   end
 
   def new
@@ -66,6 +67,7 @@ class PostsController < ApplicationController
     @user = current_user
     @post.liked_by @user
   end
+
 
   private
 

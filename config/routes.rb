@@ -2,8 +2,10 @@ Rails.application.routes.draw do
 
   resources :posts do
     get 'like_it' => "posts#like"
+    get 'comment_it' => "posts#add_comment"
   end
-  
+  resources :comments
+
   get 'search_posts' => "posts#render_search_popup"
 
   root 'pages#front'

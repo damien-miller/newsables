@@ -3,7 +3,6 @@
     <div class="un-col-md-8 un-content">
   		<div class="un-item-post un-item-medium">
 
-
   			<div class="un-post-media un-post-image un-overlay-4">
   			  <%= image_tag(@post.image) %>
         </div><!-- end page top / page media -->
@@ -48,6 +47,44 @@
 
 
   		</div>
+
+<!-- comments -->
+
+<div class="un-comments">
+  <div class="un-comments-title"><%= @post.comments.count %> comments</div>
+  <ul id="comments-container" class="un-comment-list">
+    <%= render @comments %>
+  </ul><!-- end comment list -->
+</div>
+
+<!-- // comments -->
+
+<!-- comment form -->
+<div class="un-comment-form">
+
+  <div class="un-form-title">leave a reply</div>
+    
+    <%= form_for Comment.new, remote: true do |f| %>
+
+      <div class="field">
+        <%= f.label :body, class: "un-label" %><br>
+        <%= f.text_area :body, class: "un-input" %>
+      </div>
+      <%= f.hidden_field :post_id, value: @post.id %> 
+                
+      <%= f.submit class: "un-btn-submit" do %>
+        post comment <i class="un-icon-feather"></i>
+      <% end %>
+        <!--
+        <button type="submit" name="submit" class="un-btn-submit">post comment <i class="un-icon-feather"></i></button>-->
+        
+        <!--<i class="un-icon-feather"></i>-->
+    
+    <% end %>
+
+</div>
+<!-- // comment form -->
+
     </div>
   </div>
 </div>
