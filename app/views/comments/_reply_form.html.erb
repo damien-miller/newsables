@@ -1,0 +1,12 @@
+<li class="reply-form" style="padding-bottom: 20px;">
+<%= form_for Comment.new, url: comment_send_reply_path(comment), remote: true do |f| %>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :post_id, post_id %>
+  <div class="field">
+    <%= f.text_area :body, class: "un-input" %>
+  </div>
+  <%= f.submit class: "un-btn-submit" do %>
+    post comment <i class="un-icon-feather"></i>
+  <% end %>
+<% end %>
+</li>

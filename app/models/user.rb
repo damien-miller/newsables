@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
   validates :name, length: { in: 2..15 }
 
   has_many :posts
+  has_many :comments
 end

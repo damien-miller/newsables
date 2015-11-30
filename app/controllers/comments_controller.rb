@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.author = current_user
-
+    @comment.parent = Comment.find(10)
     respond_to do |format|
       if @comment.save
         format.js
@@ -24,39 +24,50 @@ class CommentsController < ApplicationController
     
   end
 
-  def update
-    respond_to do |format|
-      if @comment.update(post_params)
-        format.html { redirect_to @comment, notice: 'Post was successfully updated.' }
-        format.json { render :show, status: :ok, location: @comment }
-      else
-        format.html { render :edit }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
-      end
-    end
+  def render_reply_form
+    @comment = Comment.find(params[:comment_id])
+    @post = Post.find(params[:post_id])
   end
+
+  def reply
+    @comment = Comment.find(params[:comment_id])
+    @reply = @comment.children.new(comment_params)
+    @reply.author = current_user
+    @reply.post = Post.find(params[:post_id])
+
+    @reply.save
+  end
+
+# def update
+#    respond_to do |format|
+#      if @comment.update(post_params)
+#        format.html { redirect_to @comment, notice: 'Post was successfully updated.' }
+#        format.json { render :show, status: :ok, location: @comment }
+#     else
+#        format.html { render :edit }
+#       format.json { render json: @comment.errors, status: :unprocessable_entity }
+#     end
+#    end
+#  end
 
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Comment was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'Comment was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
-  def render_search_popup
-  end
-
-  def like
-    @comment = Comment.find(params[:post_id])
-    @user = current_user
-    @comment.liked_by @user
-  end
+#  def like
+#    @comment = Comment.find(params[:post_id])
+#    @user = current_user
+#    @comment.liked_by @user
+# end
 
   private
 
-  def set_post
-    @pcomment = Comment.find(params[:id])
+  def set_comment
+    @comment = Comment.find(params[:id])
   end
 
   def comment_params

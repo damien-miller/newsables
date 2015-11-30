@@ -1,0 +1,2 @@
+$(".reply-form").remove();
+$("#comment-<%= @comment.id %> .un-comment-cloud").append("<%= j render(partial: 'reply_form', locals: { post_id: @post.id, comment: @comment }) %>");

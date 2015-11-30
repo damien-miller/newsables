@@ -1,16 +1,39 @@
-<li class="un-comment-row">
-    <div class="un-comment-avatar"><!--
-        <img src="img/media/avatars/img1.jpg" alt="">-->
+<li id="comment-<%= comment.id %>" class="un-comment-row">
+  <div class="un-comment-avatar"><!--
+    <img src="img/media/avatars/img1.jpg" alt="">-->
+  </div>
+                  
+  <div class="un-comment-cloud">
+    <div class="un-comment-arrow"></div>
+    <div class="un-btn-reply">
+      <%= link_to comment_reply_path(comment, post_id: @post), remote: true do %>
+        <i class="un-icon-share"></i>
+      <% end %>
     </div>
-                    
-    <div class="un-comment-cloud">
+    <div class="un-comment-author"><%= link_to comment.author.name, comment.author %></div>
+    <div class="un-comment-date"><%= comment.created_at %></div>
+    <div class="un-comment"><%= comment.body %></div>
+  </div>
+
+  <ul class="un-comment-list-reply">
+    <% comment.descendants.limit(5).each do |cc| %>
+    <li id="comment-<%= cc.id %>" class="un-comment-row">
+      <div class="un-comment-avatar"><!--
+        <img src="img/media/avatars/img1.jpg" alt="">-->
+      </div>
+      <div class="un-comment-cloud">
         <div class="un-comment-arrow"></div>
         <div class="un-btn-reply">
-            <a href="#"><i class="un-icon-share"></i></a>
+          <%= link_to comment_reply_path(cc, post_id: @post), remote: true do %>
+            <i class="un-icon-share"></i>
+          <% end %>
         </div>
-        <div class="un-comment-author"><%= link_to comment.author.name, comment.author %></div>
-        <div class="un-comment-date"><%= comment.created_at %></div>
-        
-        <div class="un-comment"><%= comment.body %></div>
-    </div>
+        <div class="un-comment-author"><%= link_to cc.author.name, cc.author %></div>
+        <div class="un-comment-date"><%= cc.created_at %></div>
+        <div class="un-comment"><span style="font-weight:bold;">To <%= cc.parent.author.name %>: </span><%= cc.body %></div>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+
 </li><!-- end first comment -->
