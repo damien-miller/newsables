@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  resources :posts
+
+  resources :posts do
+    get 'like_it' => "posts#like"
+  end
+  
   get 'search_posts' => "posts#render_search_popup"
+
   root 'pages#front'
 
   resources :users

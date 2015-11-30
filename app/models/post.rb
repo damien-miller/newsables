@@ -1,5 +1,7 @@
 class Post < ActiveRecord::Base
   acts_as_taggable
+  acts_as_votable
+  
   validates :title, length: { in: 5..100 }, uniqueness: true
   validates :body, presence: true
 

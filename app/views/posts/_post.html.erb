@@ -12,7 +12,7 @@
           <span style="text-transform: lowercase;">#<%= tag %></span>
           <% end %>
         </div>
-        <div class="un-post-title"><a href="<%= post_path(post) %>"><%= post.title %></a></div>
+        <div class="un-post-title"><%= link_to post.title, post_path(post) %></div>
       </div>
       <div class="un-post-exc">
         <%= truncate(post.body, :ommision => "... Read More", :length => 100) %>
@@ -25,7 +25,12 @@
           <% if post.author == current_user %>
           <span class="un-post-views"><i class="fa fa-cogs"></i><%= link_to "edit", edit_post_path(post) %></span>
           <% end %>
-          <span class="un-post-views"><i class="un-icon-eye"></i>575</span>
+          <span class="un-post-views">
+            <%= link_to post_like_it_path(post), remote: true do %>
+            <i class="fa fa-heart-o"></i>
+            <% end %>
+            <%= post.votes_for.size %>
+          </span>
         </div>
         <div class="un-clearfix"></div>
       </div><!-- end post meta / stats -->

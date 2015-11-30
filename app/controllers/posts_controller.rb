@@ -61,6 +61,12 @@ class PostsController < ApplicationController
   def render_search_popup
   end
 
+  def like
+    @post = Post.find(params[:post_id])
+    @user = current_user
+    @post.liked_by @user
+  end
+
   private
 
   def set_post
