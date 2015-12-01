@@ -13,7 +13,6 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.author = current_user
-    @comment.parent = Comment.find(10)
     respond_to do |format|
       if @comment.save
         format.js
@@ -51,10 +50,12 @@ class CommentsController < ApplicationController
 #  end
 
   def destroy
-    @comment.destroy
     respond_to do |format|
-      format.html { redirect_to root_path, notice: 'Comment was successfully destroyed.' }
-      format.json { head :no_content }
+      if @comment.destroy
+        format.js
+      else
+        # do nothing
+      end
     end
   end
 

@@ -7,11 +7,16 @@
     <div class="un-comment-arrow"></div>
     <div class="un-btn-reply">
       <%= link_to comment_reply_path(comment, post_id: @post), remote: true do %>
-        <i class="un-icon-share"></i>
+        <i class="fa fa-reply"></i>
       <% end %>
     </div>
     <div class="un-comment-author"><%= link_to comment.author.name, comment.author %></div>
-    <div class="un-comment-date"><%= comment.created_at %></div>
+    <div class="un-comment-date">
+      <%= comment.created_at %> | 
+      <%= link_to comment_path(comment), method: :delete, remote: true do %>
+        remove <i class="fa fa-times"></i>
+      <% end if comment.author == current_user %>
+    </div>
     <div class="un-comment"><%= comment.body %></div>
   </div>
 
@@ -25,11 +30,16 @@
         <div class="un-comment-arrow"></div>
         <div class="un-btn-reply">
           <%= link_to comment_reply_path(cc, post_id: @post), remote: true do %>
-            <i class="un-icon-share"></i>
+            <i class="fa fa-reply"></i>
           <% end %>
         </div>
         <div class="un-comment-author"><%= link_to cc.author.name, cc.author %></div>
-        <div class="un-comment-date"><%= cc.created_at %></div>
+        <div class="un-comment-date">
+        <%= cc.created_at %> | 
+        <%= link_to comment_path(cc), method: :delete, remote: true do %>
+          remove <i class="fa fa-times"></i>
+        <% end if cc.author == current_user %>
+        </div>
         <div class="un-comment"><span style="font-weight:bold;">To <%= cc.parent.author.name %>: </span><%= cc.body %></div>
       </div>
     </li>
