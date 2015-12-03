@@ -22,6 +22,9 @@ gem 'acts-as-taggable-on', '~> 3.4'
 gem 'acts_as_votable', '~> 0.10.0'
 # ancestry
 gem 'ancestry'
+# text edit
+gem 'mercury-rails'
+gem 'wysiwyg-rails'
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.0'
