@@ -23,7 +23,6 @@ gem 'acts_as_votable', '~> 0.10.0'
 # ancestry
 gem 'ancestry'
 # text edit
-gem 'mercury-rails'
 gem 'wysiwyg-rails'
 group :development, :test do
   gem 'byebug'
